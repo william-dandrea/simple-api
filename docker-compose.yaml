@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  simple-api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      target: production
+    ports:
+      - "3752:3000"
+    restart: "always"
+    networks:
+      - simple-api-network
+
+networks:
+  simple-api-network:
+    driver: bridge
