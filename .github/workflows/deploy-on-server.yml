@@ -22,16 +22,6 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          source: ./
-          target: /simple-api
-
-      - name: SSH Build and Run
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /simple-api
-            ./start-prod.sh
+            cd /home/ubuntu/web
+            mkdir bonjour
