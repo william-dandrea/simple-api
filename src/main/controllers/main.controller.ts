@@ -6,6 +6,6 @@ export class MainController {
 
     @Get()
     public async test(): Promise<any> {
-        return "Hello World2"
+        return "Hello World3"
     }
 }

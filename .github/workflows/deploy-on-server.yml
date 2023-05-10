@@ -18,6 +18,10 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /home/ubuntu/web/simple-api
+            cd ${{secrets.REPOSITORY_PATH}}
+            echo "🔽 Pull the repository"
             git pull origin main
+            echo "🏁 Build and run"
             ./start-prod.sh
+            echo "🗑️ Clean unsued images"
+            docker image prune -a -f
