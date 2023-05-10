@@ -18,5 +18,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd /home/ubuntu/web
-            mkdir bonjour
+            cd /home/ubuntu/web/simple-api
+            git pull origin main
+            ./start-prod.sh
